@@ -56,8 +56,8 @@ class TweetSetSuite {
   @Test def `descending: set5`: Unit =
     new TestSets {
       val trends = set5.descendingByRetweet
-      assert(!trends.isEmpty)
-      assert(trends.head.user == "a" || trends.head.user == "b")
+      assert(!trends.isEmpty, "Shouldn't be empty")
+      assert(trends.head.user == "a" || trends.head.user == "b", "Should be a or b")
     }
 
 
