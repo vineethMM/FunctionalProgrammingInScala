@@ -42,6 +42,22 @@ class HuffmanSuite {
       assertEquals("ab".toList, decode(t1, encode(t1)("ab".toList)))
     }
 
+  @Test def `decode secret successfully`: Unit =
+    new TestTrees {
+      assertEquals(List('h', 'u', 'f', 'f', 'm', 'a', 'n', 'e', 's', 't', 'c', 'o', 'o', 'l'), decodedSecret)
+    }
+
+  @Test def `decode and encode a very long text should be identity (10pts)`: Unit = {
+
+    val text = "With some slightly clever use of generics and a little help from our friends Church and Curry, we can indeed emulate structural pattern matching over algebraic data types in Java, to the point where it’s almost as nice as a built-in language feature.".toList
+
+    val codeTree = createCodeTree(text)
+
+    new TestTrees {
+      assertEquals(text, decode(codeTree, quickEncode(codeTree)(text)))
+    }
+  }
+
 
   @Rule def individualTestTimeout = new org.junit.rules.Timeout(10 * 1000)
 }
