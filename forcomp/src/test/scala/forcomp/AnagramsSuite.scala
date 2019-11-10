@@ -58,10 +58,19 @@ class AnagramsSuite {
   }
 
 
+
   @Test def `sentence anagrams: [] (10pts)`: Unit = {
     val sentence = List()
     assertEquals(List(Nil), sentenceAnagrams(sentence))
   }
+
+
+   def `combinations of sentense: [] (10pts)`: Unit = {
+    val sentence = List()
+    assertEquals(List(Nil), combinations(sentenceOccurrences( List("Linux", "rulez"))))
+  }
+
+
 
   @Test def `sentence anagrams: Linux rulez (10pts)`: Unit = {
     val sentence = List("Linux", "rulez")
@@ -89,7 +98,6 @@ class AnagramsSuite {
     )
     assertEquals(anas.toSet, sentenceAnagrams(sentence).toSet)
   }
-
 
   @Rule def individualTestTimeout = new org.junit.rules.Timeout(10 * 1000)
 }
