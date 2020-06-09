@@ -96,6 +96,8 @@ trait FunSets extends FunSetsInterface {
   def printSet(s: FunSet): Unit = {
     println(toString(s))
   }
+  
+  print("test")
 }
 
 object FunSets extends FunSets
