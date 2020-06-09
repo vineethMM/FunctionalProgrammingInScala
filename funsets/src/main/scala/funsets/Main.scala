@@ -5,5 +5,5 @@ object Main extends App {
   println(contains(singletonSet(1), 1))
   print("HI")
   print("again hi")
-  print("Hello")
+  print("Hello - from local")
 }
